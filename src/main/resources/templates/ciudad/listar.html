@@ -9,17 +9,17 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>P&aacute;gina Inicial</title>
+<title>Listado Roles</title>
 
 <!-- Custom fonts for this template-->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
+<link href="/resources/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
 
 <!-- Custom styles for this template-->
-<link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
 <body id="page-top">
 
 	<!-- Page Wrapper -->
@@ -86,8 +86,8 @@
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Geogr&aacute;ficos:</h6>
 						<a class="collapse-item" href="/ciudad">Ciudad</a> <a
-							class="collapse-item" href="/paises">Pa&iacute;ses</a> <a
-							class="collapse-item" href="/barrio">Barrios</a>
+							class="collapse-item" href="#">Pa&iacute;ses</a> <a
+							class="collapse-item" href="#">Barrios</a>
 						<div class="collapse-divider"></div>
 						<h6 class="collapse-header">Personas:</h6>
 						<a class="collapse-item" href="#">Empleados</a>
@@ -144,7 +144,7 @@
 								class="mr-2 d-lg-inline text-gray-600 small"
 								sec:authentication="name"></span> <img
 								class="img-profile rounded-circle"
-								src="resources/img/undraw_profile.svg">
+								src="/resources/img/undraw_profile.svg">
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -166,7 +166,34 @@
 					<!-- Page Heading -->
 					<div
 						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">INF4: Sistemas de Informaci&oacute;n Web</h1>
+						<div class="container mt-5">
+							<h1>Ciudades</h1>
+							<a href="/ciudad/form" class="btn btn-primary mb-3">Nueva Ciudad</a>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Descripci&oacute;n</th>
+										<th>Departamento</th>
+							            <th>Acciones</th>
+								</thead>
+								<tbody>
+									<tr th:each="ciudad : ${ciudad}">
+										<td th:text="${ciudad.id}"></td>
+										<td th:text="${ciudad.descripcion}"></td>
+						                <td th:text="${ciudad.idDepartamento}"></td>
+										
+										<td><a th:href="@{/ciudad/editar/{id}(id=${ciudad.id})}"
+											class="btn btn-warning btn-sm">Editar</a>
+											<button th:data-id="${ciudad.id}" th:data-desc="${ciudad.descripcion}" 
+												class="btn btn-danger btn-sm btn-eliminar">Eliminar</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+
 					</div>
 
 				</div>
@@ -196,38 +223,53 @@
 		class="fas fa-angle-up"></i>
 	</a>
 
-	<!-- Logout Modal-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">Select "Logout" below if you are ready
-					to end your current session.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Bootstrap core JavaScript-->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/resources/vendor/jquery/jquery.min.js"></script>
+	<script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Core plugin JavaScript-->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 	<!-- Custom scripts for all pages-->
-	<script src="resources/js/sb-admin-2.min.js"></script>
+	<script src="/resources/js/sb-admin-2.min.js"></script>
+
+	<script>
+		$(document)
+				.ready(
+						function() {
+							$('.btn-eliminar')
+									.click(
+											function() {
+												const id = $(this).data('id');
+												const desc = $(this).data('desc');
+												
+												if (confirm('¿Estás seguro de eliminar esta Ciudad ['
+														+ desc + '] ?')) {
+													$
+															.ajax({
+																url : '/ciudad/eliminar',
+																type : 'POST',
+																data : {
+																	id : id
+																},
+																success : function(
+																		response) {
+																	alert("Ciudad eliminado con éxito!!");
+																	location
+																			.reload(); // Recarga la página
+																},
+																error : function(
+																		xhr,
+																		status,
+																		error) {
+																	alert("Error al eliminar la Ciudad");
+																}
+															});
+												}
+											});
+						});
+	</script>
 
 </body>
 
