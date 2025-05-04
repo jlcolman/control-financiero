@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Formulario Ciudades</title>
+    <title>Formulario de Ciudades</title>
 
     <link href="/resources/vendor/fontawesome-free/css/all.min.css"
           rel="stylesheet" type="text/css">
@@ -23,12 +23,12 @@
     <div id="wrapper">
 
         <ul
-                class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-                id="accordionSidebar">
+            class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+            id="accordionSidebar">
 
             <a
-                    class="sidebar-brand d-flex align-items-center justify-content-center"
-                    href="/">
+                class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -63,34 +63,52 @@
             <div class="sidebar-heading">Referenciales</div>
 
             <li class="nav-item active"><a class="nav-link collapsed" href="#"
-                                         data-toggle="collapse" data-target="#collapsePages"
-                                         aria-expanded="true" aria-controls="collapsePages"> <i
+                data-toggle="collapse" data-target="#collapsePages"
+                aria-expanded="true" aria-controls="collapsePages"> <i
                     class="fas fa-fw fa-folder"></i> <span>Mantenedores</span>
             </a>
                 <div id="collapsePages" class="collapse show"
-                     aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Geogr&aacute;ficos:</h6>
-                        <a class="collapse-item active" href="/ciudad">Ciudad</a> <a
-                            class="collapse-item" href="#">Pa&iacute;ses</a> <a
-                            class="collapse-item" href="#">Barrios</a>
+                        <a class="collapse-item active" href="/ciudad">Ciudad</a>
+                        <a class="collapse-item" href="/paises">Pa&iacute;ses</a>
+                        <a class="collapse-item" href="/barrios">Barrios</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Personas:</h6>
-                        <a class="collapse-item" href="#">Empleados</a>
+                        <a class="collapse-item" href="/empleados">Empleados</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Compras:</h6>
-                        <a class="collapse-item" href="#">Marcas</a> <a
-                            class="collapse-item" href="#">Tipo de Impuesto</a> <a
-                            class="collapse-item" href="#">Proveedores</a> <a
-                            class="collapse-item" href="#">Mercader&iacute;as</a>
+                        <a class="collapse-item" href="/marcas">Marcas</a>
+                        <a class="collapse-item" href="/tipos-impuesto">Tipo de Impuesto</a>
+                        <a class="collapse-item" href="/proveedores">Proveedores</a>
+                        <a class="collapse-item" href="/mercaderias">Mercader&iacute;as</a>
 
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Facturaci&oacute;n:</h6>
-                        <a class="collapse-item" href="#">Clientes</a> <a
-                            class="collapse-item" href="#">Condici&oacute;n de Pago</a> <a
-                            class="collapse-item" href="#">Bancos</a> <a
-                            class="collapse-item" href="#">Timbrado</a> <a
-                            class="collapse-item" href="#">Caja</a>
+                        <a class="collapse-item" href="/clientes">Clientes</a>
+                        <a class="collapse-item" href="/condiciones-pago">Condici&oacute;n de Pago</a>
+                        <a class="collapse-item" href="/bancos">Bancos</a>
+                        <a class="collapse-item" href="/timbrados">Timbrado</a>
+                        <a class="collapse-item" href="/cajas">Caja</a>
+                    </div>
+                </div></li>
+
+            <hr class="sidebar-divider">
+
+            <li class="nav-item"><a class="nav-link collapsed" href="#"
+                data-toggle="collapse" data-target="#collapsePages1"
+                aria-expanded="true" aria-controls="collapsePages"> <i
+                    class="fas fa-fw fa-folder"></i> <span>Compras</span>
+            </a>
+                <div id="collapsePages1" class="collapse"
+                    aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+
+                        <a class="collapse-item" href="/pedidos-compra">Pedido Compras</a>
+                        <a class="collapse-item" href="/presupuestos-compra">Presupuesto</a>
+                        <a class="collapse-item" href="/ordenes-compra">Orden de Compra</a>
+
                     </div>
                 </div></li>
 
@@ -105,26 +123,26 @@
             <div id="content">
 
                 <nav
-                        class="navbar navbar-expand navbar-light bg-white topbar mb-4 resources-top shadow">
+                    class="navbar navbar-expand navbar-light bg-white topbar mb-4 resources-top shadow">
 
                     <button id="sidebarToggleTop"
-                            class="btn btn-link d-md-none rounded-circle mr-3">
+                        class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
 
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item dropdown no-arrow"><a
-                                class="nav-link dropdown-toggle" href="#" id="userDropdown"
-                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"> <span
+                            class="nav-link dropdown-toggle" href="#" id="userDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <span
                                 class="mr-2 d-lg-inline text-gray-600 small"
                                 sec:authentication="name"></span> <img
                                 class="img-profile rounded-circle"
                                 src="/resources/img/undraw_profile.svg">
                         </a> <div
-                                    class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="userDropdown">
+                                class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="/logout"> <i
                                         class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -137,30 +155,30 @@
                 <div class="container-fluid">
 
                     <div
-                            class="d-sm-flex align-items-center justify-content-between mb-4">
+                        class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div class="container mt-5">
-                            <h1 th:text="${ciudad.id == null ? 'Nueva Ciudad' : 'Editar Ciudad'}"></h1>
+                            <h1
+                                th:text="${ciudad.idCiudad == null ? 'Nueva Ciudad' : 'Editar Ciudad'}"></h1>
                             <form th:action="@{/ciudad/guardar}" method="post">
-                                <input type="hidden" id="id" name="id" th:value="${ciudad.id}">
+                                <input type="hidden" id="idCiudad" name="idCiudad" th:value="${ciudad.idCiudad}">
 
                                 <div class="form-group">
-                                    <label for="idDepartamento">Departamento</label>
-                                    <select class="form-control" id="idDepartamento" name="idDepartamento" required>
+                                    <label for="departamento">Departamento</label>
+                                    <select class="form-control" id="departamento" name="departamento.idDepartamento" required>
                                         <option value="">Seleccione un departamento</option>
-                                        <option th:each="departamento : ${departamento}"
-                                                th:value="${departamento.id}"
+                                        <option th:each="departamento : ${departamentos}"
+                                                th:value="${departamento.idDepartamento}"
                                                 th:text="${departamento.descripcion}"
-                                                th:selected="${ciudad.idDepartamento != null and ciudad.idDepartamento == departamento.id}">
-                                            Departamento
-                                        </option>
+                                                th:selected="${ciudad.departamento != null && ciudad.departamento.idDepartamento == departamento.idDepartamento}">
+                                            </option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="descripcion">Descripci&oacute;n</label>
                                     <input type="text" id="descripcion" name="descripcion"
-                                           class="form-control" th:value="${ciudad.descripcion}"
-                                           required>
+                                           class="form-control" th:value="${ciudad.descripcion}" required
+                                           maxlength="80">
                                 </div>
 
                                 <button type="submit" class="btn btn-success">Guardar</button>
@@ -168,8 +186,9 @@
                             </form>
                         </div>
                     </div>
+
                 </div>
-                </div>
+            </div>
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -177,20 +196,14 @@
                     </div>
                 </div>
             </footer>
-            </div>
         </div>
+    </div>
     <a class="scroll-to-top rounded" href="#page-top"> <i
             class="fas fa-angle-up"></i>
     </a>
-
-
     <script src="/resources/vendor/jquery/jquery.min.js"></script>
     <script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <script src="/resources/js/sb-admin-2.min.js"></script>
-
 </body>
-
 </html>

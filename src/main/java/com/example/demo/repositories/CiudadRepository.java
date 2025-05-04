@@ -11,6 +11,6 @@ import com.example.demo.models.Ciudad;
 @Repository
 public interface CiudadRepository extends CrudRepository<Ciudad, Long> {
 
-	@Query("SELECT s from Ciudad s")
-	List<Ciudad> findAll();
+    @Query("SELECT c from Ciudad c")
+    List<Ciudad> findByAll();
 }
