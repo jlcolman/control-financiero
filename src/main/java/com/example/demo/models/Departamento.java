@@ -17,10 +17,10 @@ public class Departamento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_departamento")
-	private Long id;
+	private Long idDepartamento;
 	
 	@Column(name = "id_pais")
-	private Integer idPais;
+	private Long idPais;
 
 	@Size(max = 80)
 	private String descripcion;

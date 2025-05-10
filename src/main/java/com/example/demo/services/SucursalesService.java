@@ -3,6 +3,7 @@ package com.example.demo.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.demo.models.Ajustes;
 import com.example.demo.models.Sucursales;
 
 public interface SucursalesService {
@@ -14,4 +15,7 @@ public interface SucursalesService {
 	void save(Sucursales rol);
 
 	void delete(Long id);
+
+	List<Ajustes> findAll();
+
 }

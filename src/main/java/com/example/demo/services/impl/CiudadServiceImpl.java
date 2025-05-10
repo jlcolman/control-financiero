@@ -16,31 +16,27 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class CiudadServiceImpl implements CiudadService {
 
-	private final CiudadRepository ciudadRepository;
+    private final CiudadRepository repository;
 
-	@Override
-	public List<Ciudad> getAllCiudades() {
-		
-		return this.ciudadRepository.findAll();
-	}
+    @Override
+    public List<Ciudad> getAlls() {
+        return repository.findByAll();
+    }
 
-	@Override
-	public Optional<Ciudad> getCiudadById(Long id) {
-		return this.ciudadRepository.findById(id);
-	}
+    @Override
+    public Optional<Ciudad> getById(Long id) {
+        return repository.findById(id);
+    }
 
-	@Override
-	public void saveCiudades(Ciudad rol) {
-		if (Objects.nonNull(rol)) {
-			this.ciudadRepository.save(rol);
-		}
-	}
+    @Override
+    public void save(Ciudad ciudad) {
+        this.repository.save(ciudad);
+    }
 
-	@Override
-	public void deleteCiudad(Long id) {
-		if(Objects.nonNull(id)) {
-			this.ciudadRepository.findById(id).ifPresent(rol -> this.ciudadRepository.delete(rol));
-		}
-	}
-
+    @Override
+    public void delete(Long id) {
+        if (Objects.nonNull(id)) {
+            this.repository.findById(id).ifPresent(ciudad -> this.repository.delete(ciudad));
+        }
+    }
 }

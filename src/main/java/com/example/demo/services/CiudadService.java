@@ -7,11 +7,11 @@ import com.example.demo.models.Ciudad;
 
 public interface CiudadService {
 
-	List<Ciudad> getAllCiudades();
+    List<Ciudad> getAlls();
 
-	Optional<Ciudad> getCiudadById(Long id);
+    Optional<Ciudad> getById(Long id);
 
-	void saveCiudades(Ciudad rol);
+    void save(Ciudad ciudad);
 
-	void deleteCiudad(Long id);
+    void delete(Long id);
 }

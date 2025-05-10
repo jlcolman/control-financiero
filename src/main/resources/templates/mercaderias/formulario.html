@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<<<<<<< HEAD
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Formulario Mercaderías</title>
+
+<link href="/resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+
+<link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
+<body id="page-top">
+
+	<div id="wrapper">
+
+		<ul
+			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			id="accordionSidebar">
+
+			<a
+				class="sidebar-brand d-flex align-items-center justify-content-center"
+				href="/">
+				<div class="sidebar-brand-icon rotate-n-15">
+					<i class="fas fa-laugh-wink"></i>
+				</div>
+				<div class="sidebar-brand-text mx-3">
+					SB Admin <sup>2</sup>
+				</div>
+			</a>
+
+			<hr class="sidebar-divider my-0">
+
+			<li class="nav-item active"><a class="nav-link" href="/"> <i
+					class="fas fa-fw fa-tachometer-alt"></i> <span>Principal</span></a></li>
+
+			<hr class="sidebar-divider">
+
+			<div class="sidebar-heading">Seguridad</div>
+
+			<li class="nav-item"><a class="nav-link" href="/usuarios"> <i
+					class="fas fa-user "></i> <span>Usuarios</span>
+			</a></li>
+
+			<li class="nav-item"><a class="nav-link" href="/roles"> <i
+					class="fas fa-address-book"></i> <span>Roles</span>
+			</a></li>
+
+			<li class="nav-item"><a class="nav-link" href="/sucursales">
+					<i class="fas fa-home"></i> <span>Sucursales</span>
+			</a></li>
+
+			<hr class="sidebar-divider">
+
+			<div class="sidebar-heading">Referenciales</div>
+
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapsePages"
+				aria-expanded="true" aria-controls="collapsePages"> <i
+					class="fas fa-fw fa-folder"></i> <span>Mantenedores</span>
+			</a>
+				<div id="collapsePages" class="collapse show"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Geogr&aacute;ficos:</h6>
+						<a class="collapse-item" href="#">Ciudad</a> <a
+							class="collapse-item" href="#">Pa&iacute;ses</a> <a
+							class="collapse-item" href="#">Barrios</a>
+						<div class="collapse-divider"></div>
+						<h6 class="collapse-header">Personas:</h6>
+						<a class="collapse-item" href="#">Empleados</a>
+						<div class="collapse-divider"></div>
+						<h6 class="collapse-header">Compras:</h6>
+						<a class="collapse-item" href="/marcas">Marcas</a> <a
+							class="collapse-item" href="/tipos-impuesto">Tipo de Impuesto</a> <a
+							class="collapse-item" href="#">Proveedores</a> <a
+							class="collapse-item active" href="/mercaderias">Mercader&iacute;as</a>
+
+						<div class="collapse-divider"></div>
+						<h6 class="collapse-header">Facturaci&oacute;n:</h6>
+						<a class="collapse-item" href="#">Clientes</a> <a
+							class="collapse-item" href="#">Condici&oacute;n de Pago</a> <a
+							class="collapse-item" href="#">Bancos</a> <a
+							class="collapse-item" href="#">Timbrado</a> <a
+							class="collapse-item" href="#">Caja</a>
+					</div>
+				</div></li>
+
+
+<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Heading -->
+
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapsePages1"
+				aria-expanded="true" aria-controls="collapsePages"> <i
+					class="fas fa-fw fa-folder"></i> <span>Compras</span>
+			</a>
+				<div id="collapsePages1" class="collapse"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+
+						<a class="collapse-item" href="#">Pedido Compras</a> <a
+							class="collapse-item" href="#">Presupuesto</a> <a
+							class="collapse-item" href="#">Orden de Compra</a>
+						
+					</div>
+				</div></li>
+
+
+			<hr class="sidebar-divider">
+
+			<div class="sidebar-heading">Compras</div>
+
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapsePages1"
+				aria-expanded="true" aria-controls="collapsePages"> <i
+					class="fas fa-fw fa-folder"></i> <span>Transacciones</span>
+			</a>
+				<div id="collapsePages1" class="collapse"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+
+						<a class="collapse-item" href="#">Pedido Compras</a> <a
+							class="collapse-item" href="#">Presupuesto</a> <a
+							class="collapse-item" href="#">Orden de Compra</a>
+
+					</div>
+				</div></li>
+			<div class="text-center d-none d-md-inline">
+				<button class="rounded-circle border-0" id="sidebarToggle"></button>
+			</div>
+
+		</ul>
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<div id="content">
+
+				<nav
+					class="navbar navbar-expand navbar-light bg-white topbar mb-4 resources-top shadow">
+
+					<button id="sidebarToggleTop"
+						class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<ul class="navbar-nav ml-auto">
+
+						<li class="nav-item dropdown no-arrow"><a
+							class="nav-link dropdown-toggle" href="#" id="userDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <span
+								class="mr-2 d-lg-inline text-gray-600 small"
+								sec:authentication="name"></span> <img
+								class="img-profile rounded-circle"
+								src="/resources/img/undraw_profile.svg">
+						</a> <div
+								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="userDropdown">
+								<a class="dropdown-item" href="/logout"> <i
+									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+									Logout
+								</a>
+							</div></li>
+
+					</ul>
+
+				</nav>
+				<div class="container-fluid">
+
+					<div
+						class="d-sm-flex align-items-center justify-content-between mb-4">
+						<div class="container mt-5">
+							<h1
+								th:text="${mercaderia.idMercaderia == null ? 'Nueva Mercadería' : 'Editar Mercadería'}"></h1>
+							<form th:action="@{/mercaderias/guardar}" method="post" th:object="${mercaderia}">
+								<input type="hidden" id="idMercaderia" name="idMercaderia" th:field="*{idMercaderia}">
+
+								<div class="form-group">
+									<label for="idMarca">Marca</label>
+									<select id="idMarca" name="idMarca" class="form-control" th:field="*{idMarca}" required>
+										<option value="">Seleccione una Marca</option>
+										<option th:each="marca : ${marcas}" th:value="${marca.idMarca}" th:text="${marca.descripcion}"></option>
+									</select>
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('idMarca')}" th:errors="*{idMarca}"></small>
+								</div>
+
+								<div class="form-group">
+									<label for="idTipoImpuesto">Tipo de Impuesto</label>
+									<select id="idTipoImpuesto" name="idTipoImpuesto" class="form-control" th:field="*{idTipoImpuesto}" required>
+										<option value="">Seleccione un Tipo de Impuesto</option>
+										<option th:each="tipoImpuesto : ${tiposImpuesto}" th:value="${tipoImpuesto.idTipoImpuesto}" th:text="${tipoImpuesto.descripcion}"></option>
+									</select>
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('idTipoImpuesto')}" th:errors="*{idTipoImpuesto}"></small>
+								</div>
+
+								<div class="form-group">
+									<label for="idProcedencia">Procedencia (Opcional)</label>
+									<input type="number" id="idProcedencia" name="idProcedencia" class="form-control" th:field="*{idProcedencia}">
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('idProcedencia')}" th:errors="*{idProcedencia}"></small>
+								</div>
+
+								<div class="form-group">
+									<label for="descripcion">Descripción</label>
+									<input type="text" id="descripcion" name="descripcion" class="form-control" th:field="*{descripcion}" required>
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}"></small>
+								</div>
+
+								<div class="form-group">
+									<label for="afectaExistencia">Afecta Existencia (S/N)</label>
+									<input type="text" id="afectaExistencia" name="afectaExistencia" class="form-control" th:field="*{afectaExistencia}" required>
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('afectaExistencia')}" th:errors="*{afectaExistencia}"></small>
+								</div>
+
+								<div class="form-group">
+									<label for="precioCompra">Precio de Compra</label>
+									<input type="number" step="0.01" id="precioCompra" name="precioCompra" class="form-control" th:field="*{precioCompra}" required>
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('precioCompra')}" th:errors="*{precioCompra}"></small>
+								</div>
+
+								<div class="form-group">
+									<label for="precioVenta">Precio de Venta</label>
+									<input type="number" step="0.01" id="precioVenta" name="precioVenta" class="form-control" th:field="*{precioVenta}" required>
+									<small class="form-text text-danger" th:if="${#fields.hasErrors('precioVenta')}" th:errors="*{precioVenta}"></small>
+								</div>
+
+								<button type="submit" class="btn btn-success">Guardar</button>
+								<a href="/mercaderias" class="btn btn-secondary">Cancelar</a>
+							</form>
+						</div>
+
+
+					</div>
+
+				</div>
+				</div>
+			<footer class="sticky-footer bg-white">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright &copy; Your Website 2021</span>
+					</div>
+				</div>
+			</footer>
+			</div>
+		</div>
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+
+	<script src="/resources/vendor/jquery/jquery.min.js"></script>
+	<script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<script src="/resources/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
+=======
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title th:text="${mercaderia.idMercaderia == null ? 'Nueva Mercadería' : 'Editar Mercadería'}"></title>
+
+    <link href="/resources/vendor/fontawesome-free/css/all.min.css"
+          rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <link href="/resources/css/sb-admin-2.min.css" rel="stylesheet">
+<body id="page-top">
+
+<div id="wrapper">
+
+    <ul
+            class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+            id="accordionSidebar">
+
+        <a
+                class="sidebar-brand d-flex align-items-center justify-content-center"
+                href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">
+                SB Admin <sup>2</sup>
+            </div>
+        </a>
+
+        <hr class="sidebar-divider my-0">
+
+        <li class="nav-item active"><a class="nav-link" href="/"> <i
+                class="fas fa-fw fa-tachometer-alt"></i> <span>Principal</span></a></li>
+
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">Seguridad</div>
+
+        <li class="nav-item"><a class="nav-link" href="/usuarios"> <i
+                class="fas fa-user "></i> <span>Usuarios</span>
+        </a></li>
+
+        <li class="nav-item"><a class="nav-link" href="/roles"> <i
+                class="fas fa-address-book"></i> <span>Roles</span>
+        </a></li>
+
+        <li class="nav-item"><a class="nav-link" href="/sucursales">
+                <i class="fas fa-home"></i> <span>Sucursales</span>
+        </a></li>
+
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">Referenciales</div>
+
+        <li class="nav-item"><a class="nav-link collapsed" href="#"
+                                data-toggle="collapse" data-target="#collapsePages"
+                                aria-expanded="true" aria-controls="collapsePages"> <i
+                class="fas fa-fw fa-folder"></i> <span>Mantenedores</span>
+        </a>
+            <div id="collapsePages" class="collapse"
+                 aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Geogr&aacute;ficos:</h6>
+                    <a class="collapse-item" href="#">Ciudad</a> <a
+                        class="collapse-item" href="#">Pa&iacute;ses</a> <a
+                        class="collapse-item" href="#">Barrios</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Personas:</h6>
+                    <a class="collapse-item" href="#">Empleados</a>
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Compras:</h6>
+                    <a class="collapse-item" href="/marcas">Marcas</a> <a
+                        class="collapse-item" href="/tipoimpuestos">Tipo de Impuesto</a> <a
+                        class="collapse-item" href="#">Proveedores</a> <a
+                        class="collapse-item" href="/mercaderias">Mercader&iacute;as</a>
+
+                    <div class="collapse-divider"></div>
+                    <h6 class="collapse-header">Facturaci&oacute;n:</h6>
+                    <a class="collapse-item" href="#">Clientes</a> <a
+                        class="collapse-item" href="#">Condici&oacute;n de Pago</a> <a
+                        class="collapse-item" href="#">Bancos</a> <a
+                        class="collapse-item" href="#">Timbrado</a> <a
+                        class="collapse-item" href="#">Caja</a>
+                </div>
+            </div></li>
+
+        <hr class="sidebar-divider">
+
+        <li class="nav-item"><a class="nav-link collapsed" href="#"
+                                data-toggle="collapse" data-target="#collapsePages1"
+                                aria-expanded="true" aria-controls="collapsePages"> <i
+                class="fas fa-fw fa-folder"></i> <span>Compras</span>
+        </a>
+            <div id="collapsePages1" class="collapse"
+                 aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <a class="collapse-item" href="#">Pedido Compras</a> <a
+                        class="collapse-item" href="#">Presupuesto</a> <a
+                        class="collapse-item" href="#">Orden de Compra</a>
+
+                </div>
+            </div></li>
+
+
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <div id="content">
+
+            <nav
+                    class="navbar navbar-expand navbar-light bg-white topbar mb-4 resources-top shadow">
+
+                <button id="sidebarToggleTop"
+                        class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item dropdown no-arrow"><a
+                            class="nav-link dropdown-toggle" href="#" id="userDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"> <span
+                            class="mr-2 d-lg-inline text-gray-600 small"
+                            sec:authentication="name"></span> <img
+                            class="img-profile rounded-circle"
+                            src="/resources/img/undraw_profile.svg">
+                    </a> <div
+                                class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="/logout"> <i
+                                    class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div></li>
+
+                </ul>
+
+            </nav>
+            <div class="container-fluid">
+
+                <div
+                        class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <div class="container mt-5">
+                        <h1 th:text="${mercaderia.idMercaderia == null ? 'Nueva Mercadería' : 'Editar Mercadería'}"></h1>
+                        <form th:action="@{/mercaderias/guardar}" method="post">
+                            <input type="hidden" id="idMercaderia" name="idMercaderia" th:value="${mercaderia.idMercaderia}">
+
+                            <div class="form-group">
+                                <label for="idMarca">Marca</label>
+                                <select class="form-control" id="idMarca" name="idMarca" required>
+                                    <option value="">Seleccione una Marca</option>
+                                    <option th:each="marca : ${marcas}" th:value="${marca.idMarca}" th:text="${marca.descripcion}"
+                                            th:selected="${mercaderia.marca != null && mercaderia.marca.idMarca == marca.idMarca}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="idTipoImpuesto">Tipo de Impuesto</label>
+                                <select class="form-control" id="idTipoImpuesto" name="idTipoImpuesto" required>
+                                    <option value="">Seleccione un Tipo de Impuesto</option>
+                                    <option th:each="tipoImpuesto : ${tipoImpuestos}" th:value="${tipoImpuesto.idTipoImpuesto}" th:text="${tipoImpuesto.descripcion}"
+                                            th:selected="${mercaderia.tipoImpuesto != null && mercaderia.tipoImpuesto.idTipoImpuesto == tipoImpuesto.idTipoImpuesto}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descripcion">Descripción</label>
+                                <input type="text" class="form-control" id="descripcion" name="descripcion" th:value="${mercaderia.descripcion}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="afectaExistencia">Afecta Existencia</label>
+                                <select class="form-control" id="afectaExistencia" name="afectaExistencia" required>
+                                    <option value="S" th:selected="${mercaderia.afectaExistencia == 'S'}">Sí</option>
+                                    <option value="N" th:selected="${mercaderia.afectaExistencia == 'N'}">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="precioCompra">Precio de Compra</label>
+                                <input type="number" step="0.01" class="form-control" id="precioCompra" name="precioCompra" th:value="${mercaderia.precioCompra}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="precioVenta">Precio de Venta</label>
+                                <input type="number" step="0.01" class="form-control" id="precioVenta" name="precioVenta" th:value="${mercaderia.precioVenta}" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <a href="/mercaderias" class="btn btn-secondary">Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            </div>
+        </div>
+    <a class="scroll-to-top rounded" href="#page-top"> <i
+            class="fas fa-angle-up"></i>
+    </a>
+
+
+    <script src="/resources/vendor/jquery/jquery.min.js"></script>
+    <script src="/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script src="/resources/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html></html>
+>>>>>>> 08d85ce42845bdc2a6c2a907bb3bc389924d6f78

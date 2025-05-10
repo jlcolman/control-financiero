@@ -29,7 +29,7 @@ public class CiudadController {
 
     @GetMapping
     public String listar(Model model) {
-        model.addAttribute("ciudad", ciudadService.getAllCiudades());
+        model.addAttribute("ciudad", ciudadService.getAlls());
         return "ciudad/listar";
     }
 
@@ -44,14 +44,14 @@ public class CiudadController {
     @PostMapping("/guardar")
     public String guardar(@ModelAttribute Ciudad ciudad) {
 
-        ciudadService.saveCiudades(ciudad);
+        ciudadService.save(ciudad);
         return "redirect:/ciudad";
     }
     
 
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Long id, Model model) {
-        Optional<Ciudad> ciudadOptional = ciudadService.getCiudadById(id);
+        Optional<Ciudad> ciudadOptional = ciudadService.getById(id);
 
         if (ciudadOptional.isPresent()) {
             Ciudad ciudad = ciudadOptional.get();
@@ -66,7 +66,7 @@ public class CiudadController {
 
     @PostMapping("/eliminar")
     public String eliminar(@RequestParam Long id) {
-        ciudadService.deleteCiudad(id);
+        ciudadService.delete(id);
         return "redirect:/ciudad";
     }
 }

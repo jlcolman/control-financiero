@@ -9,7 +9,7 @@ public interface DepartamentoService {
 
 	List<Departamento> getAllDepartamentos();
 
-	Optional<Departamento> getDepartamentoById(Long id);
+	Optional<Departamento> getDepartamentoById(Long idDepartamento);
 
 	void saveDepartamento(Departamento departamento);
 
